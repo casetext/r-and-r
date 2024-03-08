@@ -1,17 +1,16 @@
-# Long Context Needs Some R&R: Pushing Performance with Reprompting and In-Context Retrieval
+# Can’t Remember Details in Long Documents? You Need Some R&R
 Devanshu Agrawal, Shang Gao, and Martin Gajek
 
 ## Abstract
 
-Long-context Large language models (LLMs) hold promise for tasks such as question-answering (QA) over long documents, 
-but they tend to be biased towards the beginning and end of context documents-- a phenomenon termed the "lost in the middle" effect. 
+Long-context large language models (LLMs) hold promise for tasks such as question-answering (QA) over long documents, 
+but they tend to miss important information [in the middle](https://arxiv.org/abs/2307.03172) of context documents. 
 Here, we introduce *R&R*---a combination of two novel prompt-based methods called *reprompting* and *in-context retrieval* (ICR)---to alleviate this effect in document-based QA. 
-In reprompting, we repeat the instructions to answer the question periodically throughout the document nearly verbatim; 
-in ICR, on the other hand, we instruct the LLM to retrieve the top *k* pages most relevant to the given question, which are then used as an abbreviated context for QA. 
-In R&R, we run ICR with the retrieval instructions reprompted throughout the document. 
-We test R&R with GPT-4 Turbo and Claude-2.1 on documents up to 80k tokens in length and find it is often able to boost QA accuracy significantly. 
-We perform additional analysis to elucidate the mechanism driving R&R, including reducing the distance between relevant context and the instructions. 
-Finally, we show that compared to short-context chunkwise methods, R&R enables the use of larger chunks that cost fewer LLM calls and output tokens, while minimizing the price in accuracy.
+In reprompting, we repeat the prompt instructions periodically throughout the context document to remind the LLM of its original task. 
+In ICR, rather than instructing the LLM to answer the question directly, we instruct it to retrieve the top *k* passage numbers most relevant to the given question, which are then used as an abbreviated context in a second QA prompt. 
+We test R&R with GPT-4 Turbo and Claude-2.1 on documents up to 80k tokens in length and observe a 16-point boost in QA accuracy on average. 
+Our further analysis suggests that R&R improves performance on long document-based QA because it reduces the distance between relevant context and the instructions. 
+Finally, we show that compared to short-context chunkwise methods, R&R enables the use of larger chunks that cost fewer LLM calls and output tokens, while minimizing the drop in accuracy.
 
 
 ### Description
