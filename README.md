@@ -1,5 +1,8 @@
+[![Paper](https://img.shields.io/badge/paper-arXiv%3A2303.05004-B31B1B.svg)](https://arxiv.org/abs/2403.05004)
+
 # Can’t Remember Details in Long Documents? You Need Some R&R
 Devanshu Agrawal, Shang Gao, and Martin Gajek
+[arXiv:2403.05004](https://arxiv.org/abs/2403.05004)
 
 ## Abstract
 
@@ -15,7 +18,7 @@ Finally, we show that compared to short-context chunkwise methods, R&R enables t
 
 ### Description
 
-This repository includes code and scripts to reproduce the results presented in our paper of the same title.
+This repository includes code and scripts to reproduce the results presented in our [paper of the same name](https://arxiv.org/abs/2403.05004).
 
 
 ## Requirements
